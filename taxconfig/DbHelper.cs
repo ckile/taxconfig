@@ -11,7 +11,7 @@ namespace taxconfig
         public static IEnumerable<sortTyp> GetSortTyps()
         {
             var result = new List<sortTyp>();
-            var sqlstr = @"select * from sysconf where para_typ='33' order by para_cd";
+            var sqlstr = @"select * from  sysconf where para_typ='33' order by para_cd";
             var dt = GetData(sqlstr);
             foreach (DataRow row in dt.Rows)
             {
