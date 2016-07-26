@@ -35,6 +35,7 @@ Namespace Data
             m_strUserID = ""
             m_strCatalog = ""
             mFileName = "c:\gvhis\gvlive.udl"
+            'mFileName = "c:\cshis\cs2000.udl"
             mConnectionText = ReadFromFile()
             SplitConnectionString()
         End Sub

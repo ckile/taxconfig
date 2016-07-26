@@ -23,6 +23,17 @@ namespace taxprocess
             return DateTime.Today;
         }
 
+        public static string GetTranDesc(string trancd, SqlConnection db)
+        {
+            var sqlstr = $"select para_drpt from sysconf where para_typ='01' and para_cd='{ trancd }'";
+            var dt = GetData(sqlstr, db);
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0]["para_drpt"].ToString().Trim();
+            }
+            return "";
+        }
+
         public static DataTable GetTaxcfgs(SqlConnection db)
         {
             var sqlstr = @"select * from taxconfig where flg='1'";
